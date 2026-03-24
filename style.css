@@ -187,11 +187,124 @@ body {
     margin-bottom: 0.75rem;
 }
 
+.hero-role {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
 .hero-subtitle {
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.6;
     max-width: 520px;
+    margin-bottom: 1rem;
+}
+
+.hero-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.hero-detail svg {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+
+/* ==================== Sections ==================== */
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+
+/* ==================== Entries (Education / Experience) ==================== */
+
+.entry {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--border-color-strong);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.entry-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.entry-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.entry-date {
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.entry-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.entry-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.highlight {
+    font-size: 0.6rem;
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+    background: var(--accent-muted);
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+}
+
+.entry-list {
+    list-style: none;
+    padding: 0;
+}
+
+.entry-list li {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-left: 0.8rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+}
+
+.entry-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 50%;
 }
 
 
@@ -334,6 +447,16 @@ body {
 
     .hero-subtitle {
         font-size: 0.8rem;
+    }
+
+    .hero-details {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .entry-header {
+        flex-direction: column;
+        gap: 0.15rem;
     }
 
     .project-card {
