@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uy Nguyen — Portfolio</title>
+    <title>Uy Nguyen</title>
     <link rel="stylesheet" href="style.css">
     <script>
         // Theme initialization — runs before paint
@@ -16,6 +16,12 @@
     </script>
 </head>
 <body>
+
+    <!-- Interactive wave canvas (full-screen, sides only) -->
+    <canvas id="wave-canvas" aria-hidden="true"></canvas>
+
+    <!-- Framed hero area -->
+    <div class="hero-frame">
 
     <!-- Header -->
     <header class="header">
@@ -38,8 +44,6 @@
         </div>
     </header>
 
-    <!-- Main content -->
-    <main class="main">
         <!-- Hero -->
         <section class="hero">
             <h1 class="hero-title">Uy Nguyen</h1>
@@ -61,56 +65,22 @@
             </div>
         </section>
 
-        <!-- Education -->
-        <section class="section">
-            <h2 class="section-title">Education</h2>
+    </div><!-- /.hero-frame -->
 
-            <div class="entry">
-                <div class="entry-header">
-                    <h3 class="entry-name">Seneca Polytechnic</h3>
-                    <span class="entry-date">Sept 2025 – April 2028</span>
-                </div>
-                <p class="entry-subtitle">Advanced Diploma in Electromechanical Engineering Technology – Automation</p>
-                <div class="entry-highlights">
-                    <span class="highlight">GPA 3.9/4.0</span>
-                    <span class="highlight">Straight A's</span>
-                    <span class="highlight">Bachelor's Pathway</span>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <h3 class="entry-name">Saigon International College</h3>
-                    <span class="entry-date">Aug 2021 – Nov 2024</span>
-                </div>
-                <p class="entry-subtitle">High School Diploma (WACE Certificate)</p>
-                <div class="entry-highlights">
-                    <span class="highlight">Salutatorian (#2)</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section class="section">
-            <h2 class="section-title">Experience</h2>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <h3 class="entry-name">Charity Soccer Tournament</h3>
-                    <span class="entry-date">2024</span>
-                </div>
-                <p class="entry-subtitle">Founder &amp; Lead Manager — Ho Chi Minh City, Vietnam</p>
-                <ul class="entry-list">
-                    <li>Directed a 7-a-side tournament for nearly 100 participants from multiple schools</li>
-                    <li>Secured corporate sponsorships and managed all financial tracking</li>
-                    <li>Coordinated venue logistics, referee hiring, and volunteer supervision</li>
-                </ul>
-            </div>
-        </section>
+    <!-- Main content -->
+    <main class="main">
 
         <!-- Projects -->
         <section class="section">
             <h2 class="section-title">Projects</h2>
+
+            <!-- Marquee ticker -->
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-inner">
+                    <span>IFC</span><span>•</span><span>WEBGL</span><span>•</span><span>NODE.JS</span><span>•</span><span>CLOUDFLARE R2</span><span>•</span><span>BIM</span><span>•</span><span>AUTOMATION</span><span>•</span><span>OAUTH</span><span>•</span><span>3D VISUALIZATION</span><span>•</span><span>SYSTEM INTEGRATION</span><span>•</span>
+                    <span>IFC</span><span>•</span><span>WEBGL</span><span>•</span><span>NODE.JS</span><span>•</span><span>CLOUDFLARE R2</span><span>•</span><span>BIM</span><span>•</span><span>AUTOMATION</span><span>•</span><span>OAUTH</span><span>•</span><span>3D VISUALIZATION</span><span>•</span><span>SYSTEM INTEGRATION</span><span>•</span>
+                </div>
+            </div>
 
             <a href="https://ifc-viewer.uynguyen.cloud" class="project-card" target="_blank" rel="noopener">
                 <div class="project-header">
@@ -146,6 +116,86 @@
                 <span class="project-link">View Project &rarr;</span>
             </a>
         </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <h3 class="entry-name">Seneca Polytechnic</h3>
+                    <span class="entry-date">Sept 2025 – April 2028</span>
+                </div>
+                <p class="entry-subtitle">Advanced Diploma in Electromechanical Engineering Technology – Automation</p>
+
+                <!-- Semester timeline: 6 semesters + 2 co-op blocks -->
+                <div class="timeline">
+                    <div class="timeline-track">
+                        <div class="timeline-progress" style="width: 18.75%"></div>
+                    </div>
+                    <div class="timeline-steps">
+                        <div class="tl-step completed"><span class="tl-dot"></span><span class="tl-name">Sem 1</span><span class="tl-sub">Fall '25</span></div>
+                        <div class="tl-step current"><span class="tl-dot"></span><span class="tl-name">Sem 2</span><span class="tl-sub">Win '26</span><span class="tl-now">NOW</span></div>
+                        <div class="tl-step"><span class="tl-dot"></span><span class="tl-name">Sem 3</span><span class="tl-sub">Sum '26</span></div>
+                        <div class="tl-step coop"><span class="tl-dot"></span><span class="tl-name">Co-op</span><span class="tl-sub">Fall '26</span></div>
+                        <div class="tl-step"><span class="tl-dot"></span><span class="tl-name">Sem 4</span><span class="tl-sub">Win '27</span></div>
+                        <div class="tl-step coop"><span class="tl-dot"></span><span class="tl-name">Co-op</span><span class="tl-sub">Sum '27</span></div>
+                        <div class="tl-step"><span class="tl-dot"></span><span class="tl-name">Sem 5</span><span class="tl-sub">Fall '27</span></div>
+                        <div class="tl-step"><span class="tl-dot"></span><span class="tl-name">Sem 6</span><span class="tl-sub">Win '28</span></div>
+                    </div>
+                </div>
+
+                <div class="entry-highlights">
+                    <span class="highlight">GPA 3.9/4.0</span>
+                    <span class="highlight">Straight A's</span>
+                    <span class="highlight">Bachelor's Pathway</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <h3 class="entry-name">Saigon International College</h3>
+                    <span class="entry-date">Aug 2021 – Nov 2024</span>
+                </div>
+                <p class="entry-subtitle">High School Diploma (WACE Certificate)</p>
+                <div class="entry-highlights">
+                    <span class="highlight">Salutatorian (#2)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <h3 class="entry-name">AECIS</h3>
+                    <span class="entry-date">2026</span>
+                </div>
+                <p class="entry-subtitle">Solution Architect &amp; Contractor | <a href="https://aecis.com" target="_blank" rel="noopener">AECIS (aecis.com)</a></p>
+                <ul class="entry-list">
+                    <li>Designed and built a browser-based 3D BIM viewer tailored for construction project teams and stakeholders</li>
+                    <li>Implemented an IFC-to-XKT conversion pipeline, resulting in 10-50x faster model loading speeds compared to standard IFC parsers</li>
+                    <li>Integrated enterprise-grade infrastructure, including Google/Microsoft OAuth, Cloudflare R2 storage, and high-performance WebGL rendering</li>
+                    <li>Developed specialized engineering tools, such as real-time measurement, section slicing, floor plan views, and saved viewpoints for on-site coordination</li>
+                    <li>Collaborating as a technical contractor with the AECIS engineering team to integrate the viewer as a native module within their flagship platform; providing ongoing management and iterative updates based on approved user feedback</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <h3 class="entry-name">Charity Soccer Tournament</h3>
+                    <span class="entry-date">2024</span>
+                </div>
+                <p class="entry-subtitle">Founder &amp; Lead Manager — Ho Chi Minh City, Vietnam</p>
+                <ul class="entry-list">
+                    <li>Directed a 7-a-side tournament for nearly 100 participants from multiple schools</li>
+                    <li>Secured corporate sponsorships and managed all financial tracking</li>
+                    <li>Coordinated venue logistics, referee hiring, and volunteer supervision</li>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -159,6 +209,168 @@
             document.documentElement.classList.toggle('theme-light');
             const isLight = document.documentElement.classList.contains('theme-light');
             localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+        });
+
+        // Remove typing cursor after animation completes
+        var heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            heroTitle.addEventListener('animationend', function(e) {
+                if (e.animationName === 'typing') {
+                    heroTitle.classList.add('typed');
+                }
+            });
+        }
+
+        // --- Wave canvas (full-screen, masked to sides) ---
+        (function() {
+            var canvas = document.getElementById('wave-canvas');
+            if (!canvas) return;
+            var ctx = canvas.getContext('2d');
+            var targetX = 0.5, targetY = 0.5;
+            var mouseX = 0.5, mouseY = 0.5;
+            var time = 0;
+            var LINE_SPACING = 8;
+            var w = 0, h = 0;
+            var SIDE_WIDTH = 350;
+
+            function resize() {
+                w = window.innerWidth;
+                h = window.innerHeight;
+                var dpr = window.devicePixelRatio;
+                canvas.width = w * dpr;
+                canvas.height = h * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                SIDE_WIDTH = Math.min(350, w * 0.28);
+                document.documentElement.style.setProperty('--wave-side-width', SIDE_WIDTH + 'px');
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            document.addEventListener('mousemove', function(e) {
+                targetX = e.clientX / w;
+                targetY = e.clientY / h;
+            });
+
+            function draw() {
+                time += 0.006;
+                mouseX += (targetX - mouseX) * 0.04;
+                mouseY += (targetY - mouseY) * 0.04;
+
+                ctx.clearRect(0, 0, w, h);
+
+                var isLight = document.documentElement.classList.contains('theme-light');
+                var lineCount = Math.ceil(w / LINE_SPACING);
+                var scale = Math.min(w, 900) / 600;
+
+                for (var i = 0; i < lineCount; i++) {
+                    var baseX = i * LINE_SPACING;
+                    var ni = baseX / w;
+
+                    // Gradual fade: full opacity at edges, soft transition toward center
+                    var edgeFade = 0;
+                    if (baseX < SIDE_WIDTH) {
+                        edgeFade = Math.pow(1 - (baseX / SIDE_WIDTH), 1.5);
+                    } else if (baseX > w - SIDE_WIDTH) {
+                        edgeFade = Math.pow(1 - ((w - baseX) / SIDE_WIDTH), 1.5);
+                    }
+                    if (edgeFade <= 0.01) continue;
+
+                    ctx.beginPath();
+                    for (var y = 0; y <= h; y += 2) {
+                        var ny = y / h;
+
+                        var aspect = w / h;
+                        var dx = ni - mouseX;
+                        var dy = (ny - mouseY) / aspect;
+                        var dist = Math.sqrt(dx * dx + dy * dy);
+                        var influence = Math.exp(-dist * dist * 3);
+
+                        // Strong base waves — always active
+                        var wave = Math.sin(ny * 5 + time + i * 0.25) * 22 * scale;
+                        wave += Math.sin(ny * 2.5 + time * 0.7 + i * 0.12) * 15 * scale;
+                        wave += Math.sin(ny * 8 + time * 1.5 + i * 0.4) * 8 * scale;
+                        wave += Math.sin(ny * 1.5 + time * 0.4 + i * 0.08) * 12 * scale;
+
+                        // Mouse 3D bulge — wider range, stronger effect
+                        var angle = Math.atan2(dy, dx);
+                        wave += influence * Math.cos(angle) * 80 * scale;
+                        wave += influence * Math.sin(ny * 12 + time * 3) * 40 * scale;
+
+                        var px = baseX + wave;
+                        if (y === 0) ctx.moveTo(px, y);
+                        else ctx.lineTo(px, y);
+                    }
+
+                    var baseDist = Math.abs(ni - mouseX);
+                    var proxAlpha = Math.min(1, 0.8 + Math.exp(-baseDist * baseDist * 4) * 0.2);
+                    var lineWidth = 1.5 + Math.exp(-baseDist * baseDist * 4) * 2.5;
+
+                    proxAlpha *= edgeFade;
+
+                    if (isLight) {
+                        ctx.strokeStyle = 'rgba(0,0,0,' + (proxAlpha * 0.6) + ')';
+                    } else {
+                        ctx.strokeStyle = 'rgba(255,255,255,' + (proxAlpha * 0.45) + ')';
+                    }
+                    ctx.lineWidth = lineWidth;
+                    ctx.stroke();
+                }
+                requestAnimationFrame(draw);
+            }
+            requestAnimationFrame(draw);
+        })();
+
+        // --- Interactive effects ---
+
+        // Mouse-tracking for parallax grid + radial glow
+        let ticking = false;
+        document.addEventListener('mousemove', function(e) {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function() {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+                document.body.style.setProperty('--mouse-x', x);
+                document.body.style.setProperty('--mouse-y', y);
+                ticking = false;
+            });
+        });
+
+        // Scroll-triggered reveal for sections and footer
+        var revealTargets = document.querySelectorAll('.section, .footer');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+        revealTargets.forEach(function(el, i) {
+            // If already in viewport on load, reveal with stagger
+            var vh = window.innerHeight || document.documentElement.clientHeight;
+            var rect = el.getBoundingClientRect();
+            if (vh > 0 && rect.top < vh && rect.bottom > 0) {
+                setTimeout(function() { el.classList.add('visible'); }, 500 + i * 150);
+            } else {
+                observer.observe(el);
+            }
+        });
+
+        // 3D tilt on project card hover
+        document.querySelectorAll('.project-card').forEach(function(card) {
+            card.addEventListener('mousemove', function(e) {
+                var rect = card.getBoundingClientRect();
+                var cx = e.clientX - rect.left - rect.width / 2;
+                var cy = e.clientY - rect.top - rect.height / 2;
+                var rotateX = -(cy / rect.height) * 6;
+                var rotateY = (cx / rect.width) * 6;
+                card.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-3px) scale(1.01)';
+            });
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = '';
+            });
         });
     </script>
 
