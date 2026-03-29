@@ -22,6 +22,7 @@
     --grid-color: rgba(255, 255, 255, 0.035);
     --grid-color-strong: rgba(255, 255, 255, 0.07);
 
+    --hero-border-width: 4px;
     --font-main: 'Georgia', 'Times New Roman', serif;
     --font-mono: 'Consolas', 'SF Mono', 'Fira Code', monospace;
     --font-display: 'Georgia', 'Times New Roman', serif;
@@ -46,12 +47,13 @@
     --accent-glow: rgba(0, 0, 0, 0.1);
 
     --border-color: #d4d4d4;
-    --border-color-strong: #888888;
+    --border-color-strong: #aaaaaa;
 
     --grid-color: rgba(0, 0, 0, 0.04);
     --grid-color-strong: rgba(0, 0, 0, 0.08);
 
     --box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    --hero-border-width: 2px;
 }
 
 
@@ -98,9 +100,10 @@ body {
 
 .hero-frame {
     position: relative;
-    border: 4px solid var(--border-color-strong);
+    z-index: 1;
+    border: var(--hero-border-width) solid var(--border-color-strong);
     max-width: 860px;
-    margin: 0 auto 1.5rem;
+    margin: 1.5rem auto 1.5rem;
     padding-top: 0;
     background: var(--panel-bg);
 }
@@ -158,12 +161,12 @@ body {
     color: var(--accent-color);
 }
 
-.header-name {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.01em;
+.header-left svg {
+    transition: transform 0.4s ease;
+}
+
+.header-left:hover svg {
+    transform: rotateY(180deg);
 }
 
 .header-right {
@@ -237,6 +240,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 1.75rem 3rem 3rem;
+    perspective: 800px;
 }
 
 .hero-title {
@@ -277,9 +281,6 @@ body {
     gap: 0.35rem;
     font-size: 0.9rem;
     color: var(--text-muted);
-}
-
-.hero-detail {
     transition: color 0.15s;
     cursor: default;
 }
@@ -303,6 +304,13 @@ body {
 
 .section {
     margin-bottom: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.section:first-child {
+    border-top: none;
+    padding-top: 0;
 }
 
 
@@ -651,25 +659,9 @@ body {
     to   { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes shimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50%      { background-position: 100% 50%; }
-}
-
 @keyframes glowPulse {
     0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
     50%      { box-shadow: 0 0 20px 2px var(--accent-glow); }
-}
-
-/* Typing effect */
-@keyframes typing {
-    from { width: 0; }
-    to   { width: 100%; }
-}
-
-@keyframes blink-caret {
-    0%, 100% { border-color: transparent; }
-    50%      { border-color: var(--text-primary); }
 }
 
 /* Marquee scroll */
@@ -710,31 +702,30 @@ body {
     transform: translateY(0);
 }
 
-/* Typing effect on hero title */
+/* Hero title — per-letter 3D animation (JS-driven, one at a time) */
 .hero-title {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    border-right: 2px solid var(--text-primary);
-    animation:
-        typing 0.8s steps(9) 0.3s forwards,
-        blink-caret 0.6s step-end 0.3s 4,
-        shimmer 6s ease-in-out infinite 2s;
-    background: linear-gradient(
-        90deg,
-        var(--text-primary) 0%,
-        var(--accent-color) 50%,
-        var(--text-primary) 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    perspective: 800px;
 }
 
-/* Remove cursor after typing completes */
-.hero-title.typed {
-    border-color: transparent;
+.hero-title .letter {
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out, opacity 0.15s ease;
+    text-transform: uppercase;
+}
+
+.hero-title .letter.flip-y {
+    transform: rotateY(360deg);
+}
+
+.hero-title .letter.flip-x {
+    transform: rotateX(360deg);
+}
+
+/* Space between words */
+.hero-title .letter-space {
+    display: inline-block;
+    width: 0.3em;
 }
 
 /* Interactive grid background — JS sets --mouse-x / --mouse-y */
@@ -875,6 +866,9 @@ body::before {
         width: auto !important;
         border-color: transparent !important;
     }
+    .hero-title .letter {
+        animation: none !important;
+    }
     body::before { display: none; }
     .entry, .project-card, .tag, .highlight { transition: none !important; }
     .marquee-inner { animation: none !important; }
@@ -980,12 +974,7 @@ body::before {
 /* ==================== Timeline Animation ==================== */
 
 .timeline-progress {
-    width: 0 !important;
     transition: width 1s ease-out;
-}
-
-.timeline-progress.animate {
-    width: 18.75% !important;
 }
 
 /* ==================== Print Stylesheet ==================== */
@@ -1071,9 +1060,7 @@ body::before {
     .hero-title {
         font-size: 2rem;
     }
-}
 
-@media (max-width: 768px) {
     .nav-link {
         display: none;
     }

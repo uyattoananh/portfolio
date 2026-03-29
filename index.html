@@ -9,10 +9,23 @@
     <meta property="og:title" content="Uy Nguyen — Portfolio">
     <meta property="og:description" content="Electromechanical Engineering & Software Development. 3D visualization, cloud infrastructure, and system integration.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uynguyen.cloud">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Uy Nguyen — Portfolio">
     <meta name="twitter:description" content="Electromechanical Engineering & Software Development.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'/%3E%3Cpolyline points='2 17 12 22 22 17'/%3E%3Cpolyline points='2 12 12 17 22 12'/%3E%3C/svg%3E">
+    <link rel="icon" id="favicon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='2'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'/%3E%3Cpolyline points='2 17 12 22 22 17'/%3E%3Cpolyline points='2 12 12 17 22 12'/%3E%3C/svg%3E">
+    <script>
+        // Adaptive favicon: dark stroke for light tabs, white stroke for dark tabs
+        (function() {
+            var mq = window.matchMedia('(prefers-color-scheme: dark)');
+            function setFavicon(dark) {
+                var color = dark ? '%23fff' : '%23222';
+                document.getElementById('favicon').href = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='" + color + "' stroke-width='2'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'/%3E%3Cpolyline points='2 17 12 22 22 17'/%3E%3Cpolyline points='2 12 12 17 22 12'/%3E%3C/svg%3E";
+            }
+            setFavicon(mq.matches);
+            mq.addEventListener('change', function(e) { setFavicon(e.matches); });
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <script>
         // Theme initialization — runs before paint
@@ -42,7 +55,7 @@
             <a href="#projects" class="header-link nav-link">Projects</a>
             <a href="#education" class="header-link nav-link">Education</a>
             <a href="#experience" class="header-link nav-link">Experience</a>
-            <a href="#" class="header-link contact-copy" id="contact-link" title="Click to copy email" onclick="event.preventDefault(); (function(){ var el=document.getElementById('contact-link'); var live=document.getElementById('copy-announce'); try { var t=document.createElement('textarea'); t.value='uy@toananh.com'; t.style.position='fixed'; t.style.opacity='0'; document.body.appendChild(t); t.select(); document.execCommand('copy'); document.body.removeChild(t); el.textContent='Copied!'; live.textContent='Email copied to clipboard'; setTimeout(function(){ el.textContent='Contact'; live.textContent=''; }, 2000); } catch(e){} })();">Contact</a>
+            <a href="#" class="header-link contact-copy" id="contact-link" title="Click to copy email" onclick="event.preventDefault(); (function(){ var el=document.getElementById('contact-link'); var live=document.getElementById('copy-announce'); function done(){ el.textContent='Copied!'; live.textContent='Email copied to clipboard'; setTimeout(function(){ el.textContent='Contact'; live.textContent=''; }, 2000); } if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText('uy@toananh.com').then(done).catch(function(){}); } else { try { var t=document.createElement('textarea'); t.value='uy@toananh.com'; t.style.position='fixed'; t.style.opacity='0'; document.body.appendChild(t); t.select(); document.execCommand('copy'); document.body.removeChild(t); done(); } catch(e){} } })();">Contact</a>
             <a href="https://github.com/uyattoananh" class="header-link" target="_blank" rel="noopener">GitHub</a>
             <a href="https://www.linkedin.com/in/uy-nguyen-40aa85375/" class="header-link" target="_blank" rel="noopener">LinkedIn</a>
             <button id="theme-toggle" class="btn-theme-toggle" title="Toggle theme" aria-label="Toggle theme">
@@ -58,8 +71,8 @@
         <!-- Hero -->
         <section class="hero">
             <h1 class="hero-title">Uy Nguyen</h1>
-            <p class="hero-role">Electromechanical Engineering &amp; Software Development</p>
-            <p class="hero-subtitle">Building tools for construction, engineering, and the built environment. Focused on 3D visualization, cloud infrastructure, and system integration.</p>
+            <p class="hero-role">Electromechanical Engineering Student</p>
+            <p class="hero-subtitle" id="hero-semester">Currently in my second semester at Seneca Polytechnic, studying Electromechanical Engineering Technology — Automation.</p>
             <div class="hero-details">
                 <span class="hero-detail">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -203,13 +216,13 @@
                     <h3 class="entry-name">AECIS</h3>
                     <span class="entry-date">2026</span>
                 </div>
-                <p class="entry-subtitle">Solution Architect &amp; Contractor | <a href="https://aecis.com" target="_blank" rel="noopener">AECIS (aecis.com)</a></p>
+                <p class="entry-subtitle">Part-Time R&amp;D Team Member | <a href="https://aecis.com" target="_blank" rel="noopener">AECIS (aecis.com) <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -1px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></p>
                 <ul class="entry-list">
-                    <li>Designed and built a browser-based 3D BIM viewer tailored for construction project teams and stakeholders</li>
-                    <li>Implemented an IFC-to-XKT conversion pipeline, resulting in 10-50x faster model loading speeds compared to standard IFC parsers</li>
-                    <li>Integrated enterprise-grade infrastructure, including Google/Microsoft OAuth, Cloudflare R2 storage, and high-performance WebGL rendering</li>
-                    <li>Developed specialized engineering tools, such as real-time measurement, section slicing, floor plan views, and saved viewpoints for on-site coordination</li>
-                    <li>Collaborating as a technical contractor with the AECIS engineering team to integrate the viewer as a native module within their flagship platform; providing ongoing management and iterative updates based on approved user feedback</li>
+                    <li>Developing a browser-based 3D BIM viewer for construction project teams as part of the R&amp;D team</li>
+                    <li>Built an IFC-to-XKT conversion pipeline, achieving 10-50x faster model loading compared to standard IFC parsers</li>
+                    <li>Integrated Google/Microsoft OAuth, Cloudflare R2 storage, and WebGL rendering into the viewer platform</li>
+                    <li>Implemented engineering tools including real-time measurement, section slicing, floor plan views, and saved viewpoints</li>
+                    <li>Working with the engineering team to integrate the viewer as a module within the company's flagship platform, iterating based on user feedback</li>
                 </ul>
             </div>
 
@@ -235,7 +248,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <span>&copy; 2026 Uy Nguyen &middot; Toronto, ON</span>
+        <span>&copy; <script>document.write(new Date().getFullYear())</script> Uy Nguyen &middot; Toronto, ON</span>
     </footer>
 
     <script>
@@ -246,15 +259,136 @@
             localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
         });
 
-        // Remove typing cursor after animation completes
+        // Split hero title into individual letter spans, flip one random letter at a time
         var heroTitle = document.querySelector('.hero-title');
         if (heroTitle) {
-            heroTitle.addEventListener('animationend', function(e) {
-                if (e.animationName === 'typing') {
-                    heroTitle.classList.add('typed');
+            var text = heroTitle.textContent;
+            heroTitle.innerHTML = '';
+            var letters = [];
+            var allSpans = [];
+            for (var i = 0; i < text.length; i++) {
+                if (text[i] === ' ') {
+                    var space = document.createElement('span');
+                    space.className = 'letter-space';
+                    heroTitle.appendChild(space);
+                    allSpans.push(space);
+                } else {
+                    var span = document.createElement('span');
+                    span.className = 'letter';
+                    span.style.opacity = '0';
+                    span.textContent = text[i];
+                    heroTitle.appendChild(span);
+                    letters.push(span);
+                    allSpans.push(span);
+                }
+            }
+            // Typing entrance: reveal letters one by one
+            var typingDelay = 80;
+            var totalTypingTime = allSpans.length * typingDelay;
+            allSpans.forEach(function(el, idx) {
+                setTimeout(function() {
+                    el.style.opacity = '1';
+                }, idx * typingDelay);
+            });
+            // Flip one random letter every 4-7 seconds, starts after typing finishes
+            function flipRandomLetter() {
+                var idx = Math.floor(Math.random() * letters.length);
+                var el = letters[idx];
+                var axis = Math.random() < 0.5 ? 'flip-x' : 'flip-y';
+                el.classList.add(axis);
+                setTimeout(function() {
+                    el.classList.remove(axis);
+                }, 1000);
+                var next = 4000 + Math.random() * 3000;
+                setTimeout(flipRandomLetter, next);
+            }
+            setTimeout(flipRandomLetter, totalTypingTime + 500);
+        }
+
+        // --- Auto-update semester timeline and hero text ---
+        (function() {
+            // Define the 8 terms in order: [label, season, startMonth, startYear, endMonth, endYear, isCoop]
+            var terms = [
+                { name: 'Sem 1', sub: "Fall '25", start: [2025, 8],  end: [2025, 11], coop: false, sem: 1 },
+                { name: 'Sem 2', sub: "Win '26", start: [2026, 0],  end: [2026, 3],  coop: false, sem: 2 },
+                { name: 'Sem 3', sub: "Sum '26", start: [2026, 4],  end: [2026, 7],  coop: false, sem: 3 },
+                { name: 'Co-op', sub: "Fall '26", start: [2026, 8],  end: [2026, 11], coop: true,  sem: 0 },
+                { name: 'Sem 4', sub: "Win '27", start: [2027, 0],  end: [2027, 3],  coop: false, sem: 4 },
+                { name: 'Co-op', sub: "Sum '27", start: [2027, 4],  end: [2027, 7],  coop: true,  sem: 0 },
+                { name: 'Sem 5', sub: "Fall '27", start: [2027, 8],  end: [2027, 11], coop: false, sem: 5 },
+                { name: 'Sem 6', sub: "Win '28", start: [2028, 0],  end: [2028, 3],  coop: false, sem: 6 }
+            ];
+
+            var ordinals = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
+            var now = new Date();
+            var currentIndex = -1;
+
+            // Find current or most recent term
+            for (var i = 0; i < terms.length; i++) {
+                var s = new Date(terms[i].start[0], terms[i].start[1], 1);
+                var e = new Date(terms[i].end[0], terms[i].end[1] + 1, 0);
+                if (now >= s && now <= e) { currentIndex = i; break; }
+                if (now > e) { currentIndex = i; } // most recent completed
+            }
+
+            if (currentIndex < 0) currentIndex = 0;
+
+            var t = terms[currentIndex];
+            var isActive = now >= new Date(t.start[0], t.start[1], 1) &&
+                           now <= new Date(t.end[0], t.end[1] + 1, 0);
+
+            // Update hero subtitle
+            var heroSem = document.getElementById('hero-semester');
+            if (heroSem) {
+                if (t.coop) {
+                    heroSem.textContent = 'Currently on co-op at Seneca Polytechnic, in the Electromechanical Engineering Technology \u2014 Automation program.';
+                } else if (isActive) {
+                    heroSem.textContent = 'Currently in my ' + ordinals[t.sem] + ' semester at Seneca Polytechnic, studying Electromechanical Engineering Technology \u2014 Automation.';
+                } else if (currentIndex >= terms.length - 1) {
+                    heroSem.textContent = 'Graduate of Seneca Polytechnic \u2014 Electromechanical Engineering Technology, Automation.';
+                } else {
+                    heroSem.textContent = 'Studying Electromechanical Engineering Technology \u2014 Automation at Seneca Polytechnic.';
+                }
+            }
+
+            // Update timeline steps
+            var steps = document.querySelectorAll('.tl-step');
+            var progressBar = document.querySelector('.timeline-progress');
+
+            steps.forEach(function(step, i) {
+                step.classList.remove('completed', 'current');
+                var nowBadge = step.querySelector('.tl-now');
+                if (nowBadge) nowBadge.remove();
+
+                if (i < currentIndex) {
+                    step.classList.add('completed');
+                } else if (i === currentIndex) {
+                    step.classList.add(isActive ? 'current' : 'completed');
+                    if (isActive) {
+                        var badge = document.createElement('span');
+                        badge.className = 'tl-now';
+                        badge.textContent = 'NOW';
+                        step.appendChild(badge);
+                    }
                 }
             });
-        }
+
+            // Update progress bar: fraction through the program
+            if (progressBar) {
+                var progress;
+                if (isActive) {
+                    var termStart = new Date(t.start[0], t.start[1], 1);
+                    var termEnd = new Date(t.end[0], t.end[1] + 1, 0);
+                    var termFraction = (now - termStart) / (termEnd - termStart);
+                    progress = ((currentIndex + termFraction) / terms.length) * 100;
+                } else {
+                    progress = ((currentIndex + 1) / terms.length) * 100;
+                }
+                progressBar.style.setProperty('width', progress + '%', 'important');
+                // Also update the animate target
+                progressBar.setAttribute('data-target-width', progress + '%');
+            }
+        })();
 
         // --- Wave canvas (full-screen, masked to sides) ---
         (function() {
@@ -445,20 +579,6 @@
                 }
             });
         });
-
-        // Animate timeline progress bar on scroll
-        var timelineProgress = document.querySelector('.timeline-progress');
-        if (timelineProgress) {
-            var timelineObs = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        timelineProgress.classList.add('animate');
-                        timelineObs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.3 });
-            timelineObs.observe(timelineProgress.closest('.timeline'));
-        }
 
         // 3D tilt on project card hover
         document.querySelectorAll('.project-card').forEach(function(card) {
