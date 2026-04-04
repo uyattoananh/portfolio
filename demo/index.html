@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harmoni — Demo</title>
+  <title>Harmoni - Demo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,8 @@
       --art-radius: 14px; --bar-radius: 24px; --page-bg: #e8dfc0;
     }
 
-    html, body { height: 100%; }
+    html { height: auto; }
+    body { min-height: 100vh; }
     body {
       font-family: var(--font-family); background: var(--page-bg); color: var(--text);
       display: flex; flex-direction: column; align-items: center;
@@ -414,6 +415,75 @@
     [data-theme="ziro"] .locket-btn.play-sm { background: #15a4ef; color: #fff; border-radius: 6px; }
     [data-theme="ziro"] .mini-progress-fill { background: #15a4ef; }
     [data-theme="ziro"] .track-artist { color: #15a4ef; }
+
+    /* ── Glass ── */
+    [data-theme="glass"] { --bg: rgba(0,0,0,0.85); --surface: rgba(255,255,255,0.06); --border: rgba(255,255,255,0.12); --text: #fff; --text-dim: rgba(255,255,255,0.5); --play-btn-bg: rgba(255,255,255,0.15); --play-btn-color: #fff; --page-bg: #e8dfc0; }
+    [data-theme="glass"] .brand h1 { color: #2a2218; }
+    [data-theme="glass"] .brand p, [data-theme="glass"] .demo-label { color: #8a7a60; }
+    [data-theme="glass"] .player { background: rgba(255,255,255,0.06); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    [data-theme="glass"] .album-art { box-shadow: 0 8px 24px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); }
+    [data-theme="glass"] .play-btn { backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+    [data-theme="glass"] .play-btn:hover { background: rgba(255,255,255,0.25); }
+    [data-theme="glass"] .controls { background: rgba(255,255,255,0.04); border-radius: 12px; padding: 10px 0; }
+    [data-theme="glass"] .up-next { background: rgba(255,255,255,0.03); border-radius: 10px; padding: 10px 8px; }
+    [data-theme="glass"] .minibar { background: rgba(255,255,255,0.08); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    [data-theme="glass"] .locket { background: rgba(255,255,255,0.08); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+    [data-theme="glass"] .mini-btn.play { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); }
+    [data-theme="glass"] .locket-btn.play-sm { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); }
+    [data-theme="glass"] .mini-progress-fill { background: rgba(255,255,255,0.5); }
+    [data-theme="glass"] .lyrics-demo { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.12) !important; backdrop-filter: blur(40px); }
+    [data-theme="glass"] .theme-picker-demo { background: rgba(42,34,24,0.85); }
+
+    /* ── Album ── */
+    [data-theme="album"] { --bg: rgba(0,0,0,0.85); --surface: rgba(255,255,255,0.06); --border: rgba(255,255,255,0.08); --text: #fff; --text-dim: rgba(255,255,255,0.5); --play-btn-bg: rgba(255,255,255,0.15); --play-btn-color: #fff; --page-bg: #e8dfc0; }
+    [data-theme="album"] .brand h1 { color: #2a2218; }
+    [data-theme="album"] .brand p, [data-theme="album"] .demo-label { color: #8a7a60; }
+    [data-theme="album"] .theme-picker-demo { background: rgba(42,34,24,0.85); }
+    [data-theme="album"] .player { border: none; overflow: hidden; }
+    [data-theme="album"] .player-bg { filter: blur(40px) saturate(1.8) brightness(0.35); opacity: 1; }
+    [data-theme="album"] .player-overlay { background: rgba(0,0,0,0.35); }
+    [data-theme="album"] .album-art-wrapper { display: none; }
+    [data-theme="album"] .player-content { justify-content: flex-end; padding-bottom: 24px; }
+    [data-theme="album"] .track-title { font-size: 24px; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+    [data-theme="album"] .track-artist { color: rgba(255,255,255,0.6); text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+    [data-theme="album"] .play-btn { backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+    [data-theme="album"] .up-next { background: rgba(0,0,0,0.15); border-radius: 10px; padding: 10px 8px; }
+    [data-theme="album"] .minibar { background: rgba(0,0,0,0.4); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+    [data-theme="album"] .locket { background: rgba(0,0,0,0.4); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+    [data-theme="album"] .mini-btn.play { background: rgba(255,255,255,0.9); color: #000; }
+    [data-theme="album"] .locket-btn.play-sm { background: rgba(255,255,255,0.9); color: #000; }
+    [data-theme="album"] .mini-progress-fill { background: rgba(255,255,255,0.7); }
+    [data-theme="album"] .mini-text { color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+    [data-theme="album"] .mini-text .artist { color: rgba(255,255,255,0.6); }
+    [data-theme="album"] .lyrics-demo { background: rgba(0,0,0,0.4) !important; border-color: rgba(255,255,255,0.1) !important; backdrop-filter: blur(20px); }
+
+    /* ── Fade ── */
+    [data-theme="fade"] { --bg: rgba(0,0,0,0.85); --surface: rgba(255,255,255,0.06); --border: rgba(255,255,255,0.08); --text: #fff; --text-dim: rgba(255,255,255,0.5); --play-btn-bg: rgba(255,255,255,0.15); --play-btn-color: #fff; --page-bg: #e8dfc0; }
+    [data-theme="fade"] .brand h1 { color: #2a2218; }
+    [data-theme="fade"] .brand p, [data-theme="fade"] .demo-label { color: #8a7a60; }
+    [data-theme="fade"] .theme-picker-demo { background: rgba(42,34,24,0.85); }
+    [data-theme="fade"] .player { border: none; overflow: hidden; }
+    [data-theme="fade"] .player-bg { filter: blur(40px) saturate(1.8) brightness(0.35); opacity: 1; }
+    [data-theme="fade"] .player-overlay { background: rgba(0,0,0,0.35); }
+    [data-theme="fade"] .track-title { text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+    [data-theme="fade"] .track-artist { color: rgba(255,255,255,0.7); text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+    [data-theme="fade"] .play-btn { backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+    [data-theme="fade"] .minibar { background-image: linear-gradient(135deg,#e74c3c,#8e44ad,#2980b9); background-size: cover; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
+    [data-theme="fade"] .minibar::after { content: ''; position: absolute; inset: -30px; background: inherit; background-size: cover; filter: blur(20px) brightness(0.6) saturate(1.3); z-index: 0; pointer-events: none; }
+    [data-theme="fade"] .minibar > * { position: relative; z-index: 1; }
+    [data-theme="fade"] .locket { background-image: linear-gradient(135deg,#e74c3c,#8e44ad,#2980b9); background-size: cover; border: none; box-shadow: 0 4px 16px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
+    [data-theme="fade"] .locket::after { content: ''; position: absolute; inset: -30px; background: inherit; background-size: cover; filter: blur(20px) brightness(0.6) saturate(1.3); z-index: 0; pointer-events: none; }
+    [data-theme="fade"] .locket > * { position: relative; z-index: 1; }
+    [data-theme="fade"] .mini-btn.play { background: rgba(255,255,255,0.9); color: #000; }
+    [data-theme="fade"] .locket-btn.play-sm { background: rgba(255,255,255,0.9); color: #000; }
+    [data-theme="fade"] .mini-progress-fill { background: rgba(255,255,255,0.7); }
+    [data-theme="fade"] .mini-text { color: #fff; }
+    [data-theme="fade"] .mini-text .artist { color: rgba(255,255,255,0.6); }
+    [data-theme="fade"] .locket-title { color: #fff; }
+    [data-theme="fade"] .locket-artist { color: rgba(255,255,255,0.6); }
+    [data-theme="fade"] .lyrics-demo { background: linear-gradient(135deg,#e74c3c,#8e44ad,#2980b9) !important; background-size: cover !important; border: none !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
+    [data-theme="fade"] .lyrics-demo::after { content: ''; position: absolute; inset: -30px; background: inherit; background-size: cover; filter: blur(20px) brightness(0.6) saturate(1.3); z-index: 0; pointer-events: none; }
+    [data-theme="fade"] .lyrics-demo > * { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -482,10 +552,62 @@
         </div>
       </div>
       <div class="demo-label">Main Player</div>
-      <a href="https://github.com/uyattoananh/Harmoni/releases" target="_blank" style="display:block;margin-top:12px;padding:14px 20px;background:#2a2218;color:#e8dfc0;text-decoration:none;border-radius:8px;text-align:center;font-size:13px;font-weight:600;letter-spacing:0.5px;width:100%">
-        Download Harmoni
-        <span style="display:block;font-size:10px;font-weight:400;color:#a09880;margin-top:3px">Windows · macOS · Linux</span>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px" id="download-btns">
+        <a id="dl-win" href="https://github.com/uyattoananh/Harmoni/releases/latest" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:#2a2218;color:#e8dfc0;text-decoration:none;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:0.3px;width:100%;box-sizing:border-box">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.5l9.5-1.3v9.2H0V3.5zm10.5-1.5L24 0v11.4H10.5V2zm0 10.5H24V24l-13.5-1.9V12.5zM0 12.4h9.5v8L0 19.2v-6.8z"/></svg>
+          <span>Windows <span id="dl-win-size" style="font-weight:400;color:#a09880;font-size:10px"></span></span>
+        </a>
+        <a id="dl-mac" href="https://github.com/uyattoananh/Harmoni/releases/latest" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:#2a2218;color:#e8dfc0;text-decoration:none;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:0.3px;width:100%;box-sizing:border-box">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.7 19.4c-.7 1-1.4 2-2.5 2s-1.5-.6-2.8-.6-1.7.6-2.9.7c-1 0-1.8-1.1-2.5-2.1C6.5 17 5.3 13.7 6.9 11.5c.8-1.1 2.1-1.8 3.6-1.8 1.1 0 2 .7 2.7.7s2-.9 3.4-.8c.6 0 2.1.2 3.1 1.7-.1 0-1.9 1.1-1.8 3.3 0 2.6 2.3 3.5 2.3 3.5-.1.1-.4 1.2-1.5 2.3zM15.5 4c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.5 2.7-1.3z"/></svg>
+          <span>macOS <span id="dl-mac-size" style="font-weight:400;color:#a09880;font-size:10px"></span></span>
+        </a>
+        <a id="dl-linux" href="https://github.com/uyattoananh/Harmoni/releases/latest" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:#2a2218;color:#e8dfc0;text-decoration:none;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:0.3px;width:100%;box-sizing:border-box">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2C11 2 9.8 3.2 9.3 4.8c-.4-.2-.9-.3-1.4-.3C6.3 4.5 5 5.8 5 7.4c0 .5.1 1 .3 1.4C3.4 9.6 2 11.4 2 13.5c0 2.7 2 4.9 4.5 5.4.3 1.2 1.4 2.1 2.7 2.1.8 0 1.5-.3 2-.8.5.5 1.2.8 2 .8 1.3 0 2.4-.9 2.7-2.1 2.5-.5 4.5-2.7 4.5-5.4 0-2.1-1.4-3.9-3.3-4.7.2-.4.3-.9.3-1.4 0-1.6-1.3-2.9-2.9-2.9-.5 0-1 .1-1.4.3C14.6 3.2 13.6 2 12.5 2z"/></svg>
+          <span>Linux <span id="dl-linux-size" style="font-weight:400;color:#a09880;font-size:10px"></span></span>
+        </a>
+      </div>
+
+      <a href="https://github.com/uyattoananh/Harmoni" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px;padding:12px 16px;background:none;border:1px solid rgba(42,34,24,0.2);color:#2a2218;text-decoration:none;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:0.3px;width:100%;box-sizing:border-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        View on GitHub
       </a>
+
+      <!-- User Guide -->
+      <div style="margin-top:16px;padding:16px;background:#2a2218;border-radius:10px;color:#c4b898;font-size:11px;line-height:1.7">
+        <h3 style="font-size:13px;font-weight:700;color:#e8dfc0;margin-bottom:10px;letter-spacing:0.5px">User Guide</h3>
+        <h4 style="font-size:10px;font-weight:700;color:#e8dfc0;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Getting Started</h4>
+        <ol style="padding-left:14px;margin-bottom:10px">
+          <li>Download and install from <a href="https://github.com/uyattoananh/Harmoni/releases" style="color:#d4a84a">releases</a></li>
+          <li>Launch. It scans for Sonos speakers</li>
+          <li>Select a speaker, or switch to Local mode</li>
+        </ol>
+        <h4 style="font-size:10px;font-weight:700;color:#e8dfc0;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Music Sources</h4>
+        <ul style="padding-left:14px;margin-bottom:10px">
+          <li><strong>Sonos</strong>: playback, volume, queue</li>
+          <li><strong>Local</strong>: detects Spotify, YT Music, any app</li>
+          <li><strong>Files</strong>: MP3/FLAC/M4A/OGG/WAV</li>
+          <li><strong>Spotify</strong>: playlists (own Client ID)</li>
+        </ul>
+        <h4 style="font-size:10px;font-weight:700;color:#e8dfc0;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Minibar & Lyrics</h4>
+        <ul style="padding-left:14px;margin-bottom:10px">
+          <li>Toggle: <kbd style="background:#4a3f2a;padding:0 3px;border-radius:2px;font-size:9px;color:#e8dfc0">Ctrl+Shift+M</kbd></li>
+          <li>Click <strong>Aa</strong>: Off → Mini (4 lines) → Full</li>
+          <li>Scroll on minibar = volume</li>
+        </ul>
+        <h4 style="font-size:10px;font-weight:700;color:#e8dfc0;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Features</h4>
+        <ul style="padding-left:14px;margin-bottom:10px">
+          <li>14 themes with unique visuals</li>
+          <li>Discord Rich Presence (on by default)</li>
+          <li>Sleep timer, history, auto-update</li>
+          <li>System tray quick controls</li>
+        </ul>
+        <h4 style="font-size:10px;font-weight:700;color:#e8dfc0;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">macOS</h4>
+        <ul style="padding-left:14px;margin-bottom:0">
+          <li>Download .dmg → drag to Applications</li>
+          <li>First launch: right-click → Open</li>
+          <li>Apple Silicon (M-chip) only</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Widgets -->
@@ -506,6 +628,63 @@
         </div>
         <div class="demo-label">Minibar</div>
       </div>
+
+      <!-- Minibar with Mini Lyrics (4 lines) -->
+      <div>
+        <div style="display:flex;flex-direction:column;gap:4px;min-width:320px">
+          <div class="minibar" style="border-radius:var(--bar-radius) var(--bar-radius) 0 0">
+            <div class="mini-art"><div class="mini-art-img"></div></div>
+            <div class="mini-info">
+              <div class="mini-text">Mr. Brightside &nbsp;<span class="artist">· The Killers</span></div>
+              <div class="mini-progress"><div class="mini-progress-fill"></div></div>
+            </div>
+            <div class="mini-controls">
+              <button class="mini-btn aa" style="opacity:1;border-color:var(--text)">Aa</button>
+              <button class="mini-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+              <button class="mini-btn play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button>
+              <button class="mini-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+            </div>
+          </div>
+          <div class="lyrics-demo" style="background:var(--bg);border:1px solid var(--border);border-radius:0 0 16px 16px;padding:8px 20px;max-height:110px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;backdrop-filter:blur(30px)">
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">Coming out of my cage</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text);font-weight:600">And I've been doing just fine</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">Gotta gotta be down</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">Because I want it all</div>
+          </div>
+        </div>
+        <div class="demo-label">Minibar + Mini Lyrics</div>
+      </div>
+
+      <!-- Minibar with Full Lyrics -->
+      <div>
+        <div style="display:flex;flex-direction:column;gap:4px;min-width:320px">
+          <div class="minibar" style="border-radius:var(--bar-radius) var(--bar-radius) 0 0">
+            <div class="mini-art"><div class="mini-art-img"></div></div>
+            <div class="mini-info">
+              <div class="mini-text">Mr. Brightside &nbsp;<span class="artist">· The Killers</span></div>
+              <div class="mini-progress"><div class="mini-progress-fill"></div></div>
+            </div>
+            <div class="mini-controls">
+              <button class="mini-btn aa" style="opacity:1;border-color:var(--text)">Aa</button>
+              <button class="mini-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+              <button class="mini-btn play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button>
+              <button class="mini-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+            </div>
+          </div>
+          <div class="lyrics-demo" style="background:var(--bg);border:1px solid var(--border);border-radius:0 0 16px 16px;padding:12px 14px;height:200px;overflow-y:auto;backdrop-filter:blur(30px)">
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim);opacity:0.5">I'm coming out of my cage</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">And I've been doing just fine</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text);font-weight:600">Gotta gotta be down</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">Because I want it all</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">It started out with a kiss</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">How did it end up like this?</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">It was only a kiss, it was only a kiss</div>
+            <div style="font-size:14px;line-height:1.6;color:var(--text-dim)">Now I'm falling asleep</div>
+          </div>
+        </div>
+        <div class="demo-label">Minibar + Full Lyrics</div>
+      </div>
+
       <div>
         <div class="locket" id="locket">
           <div class="locket-art"><div class="locket-art-img"></div></div>
@@ -543,61 +722,90 @@
   <div style="max-width:800px;margin:40px auto 20px;padding:0 24px;color:#2a2218;font-family:'Inter',sans-serif">
     <h2 style="font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:1px">About Harmoni</h2>
     <p style="font-size:14px;line-height:1.8;color:#4a4030;margin-bottom:16px">
-      Harmoni is a cross-platform desktop music controller that unifies all your music sources into one customizable interface. Whether you're streaming from Spotify, playing YouTube Music in your browser, controlling Sonos speakers across your home, or playing local files from your library — Harmoni brings everything together with a single, beautiful player.
+      Harmoni is a cross-platform desktop music controller that puts Sonos speakers, Spotify, YouTube Music, local media detection, and local file playback into one app. Instead of switching between apps, you control everything from a single player with 14 themes, an always-on-top minibar, synced lyrics, and Discord Rich Presence.
     </p>
 
-    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Music Sources</h3>
+    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">How It Works</h3>
+    <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:16px">
+      Harmoni is built with Electron and runs as a native desktop app on Windows, macOS, and Linux. A Node.js backend manages all music source connections and exposes them to the frontend through IPC (inter-process communication). The UI is vanilla HTML, CSS, and JavaScript with no frameworks.
+    </p>
+    <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:16px">
+      When you launch Harmoni, it scans your local network for Sonos speakers using UPnP/SSDP discovery. If your firewall blocks SSDP (common on Windows), it falls back to scanning the ARP table and matching Sonos MAC address prefixes. Once a speaker is selected, Harmoni communicates directly with it over HTTP/SOAP without needing the Sonos app or any cloud service.
+    </p>
+    <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:16px">
+      The app polls the speaker state every 2 seconds and interpolates the progress bar position client-side for smooth visual updates between polls. When you press play/pause/next/prev, a state push is triggered immediately so the UI updates instantly rather than waiting for the next poll cycle.
+    </p>
+
+    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Music Sources: In Depth</h3>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;color:#4a4030;line-height:1.6">
-      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+      <div style="background:rgba(0,0,0,0.04);padding:14px;border-radius:8px">
         <strong style="color:#2a2218">Sonos Speakers</strong><br>
-        Auto-discovers Sonos devices on your network. Control playback, volume, queue, shuffle, and repeat across rooms. Browse favorites and playlists.
+        Auto-discovers devices via SSDP or ARP table fallback. Communicates directly over UPnP/SOAP without the Sonos app. Supports playback control, volume, queue management, shuffle, repeat, favorites, and playlists. Speaker grouping lets you join/leave multi-room setups.
       </div>
-      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+      <div style="background:rgba(0,0,0,0.04);padding:14px;border-radius:8px">
         <strong style="color:#2a2218">Local Media Detection</strong><br>
-        Automatically detects music playing in Spotify, YouTube Music, or any browser/app. Controls play/pause/next/prev through system media APIs.
+        Detects music playing in any app that exposes media info to the OS. On Windows, reads from GSMTC (Global System Media Transport Controls) via PowerShell. On macOS, uses AppleScript to query Spotify and Apple Music. On Linux, uses playerctl/MPRIS2. Supports play/pause/next/prev commands back to the source app.
       </div>
-      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+      <div style="background:rgba(0,0,0,0.04);padding:14px;border-radius:8px">
         <strong style="color:#2a2218">Local File Playback</strong><br>
-        Play MP3, FLAC, M4A, OGG, and WAV files directly. Reads metadata (title, artist, album, art). Includes search, shuffle, repeat, and volume control.
+        Select any folder and Harmoni recursively scans for MP3, FLAC, M4A, OGG, WAV, AAC, WMA, and OPUS files. The music-metadata package extracts title, artist, album, duration, and embedded album art (stored as base64). Includes search, album browser, shuffle, repeat, and built-in audio player.
       </div>
-      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+      <div style="background:rgba(0,0,0,0.04);padding:14px;border-radius:8px">
         <strong style="color:#2a2218">Spotify Integration</strong><br>
-        Browse playlists, liked songs, and search the Spotify catalog. Note: Spotify has stopped approving API access for small developer apps, so this feature is limited. If you really want to use this function, you can create your own developer app at <em>developer.spotify.com</em> and add yourself to it, given that you have Spotify Premium.
+        Uses Spotify's OAuth PKCE flow that opens your default browser for login, then captures the callback on a local HTTP server (127.0.0.1:8888). Browse playlists, liked songs, and search the catalog. Note: Spotify requires app owners to have Premium and has stopped approving Extended Quota Mode for small developers, so you'll need to create your own app at <em>developer.spotify.com</em>.
       </div>
     </div>
 
     <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Overlays & Widgets</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:13px;color:#4a4030;line-height:1.6">
-      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+    <div style="display:grid;grid-template-columns:1fr;gap:10px;font-size:13px;color:#4a4030;line-height:1.6">
+      <div style="background:rgba(0,0,0,0.04);padding:14px;border-radius:8px">
         <strong style="color:#2a2218">Minibar</strong><br>
-        Compact always-on-top overlay. Shows track info, controls, and synced lyrics. Draggable, themed, with position presets.
+        A compact always-on-top overlay that sits over your other windows. Shows the current track, artist, progress bar, and playback controls. The Aa button cycles through three lyrics modes: off, mini (4-line preview), and full (scrollable with auto-scroll to the current line). Lyrics are fetched from LRCLIB and synced in real-time. The minibar is draggable, themed per active theme, and supports position presets (top-left, top-right, bottom-left, bottom-right, center). Scroll on the minibar to adjust volume.
       </div>
-      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+      <div style="background:rgba(0,0,0,0.04);padding:14px;border-radius:8px">
         <strong style="color:#2a2218">Locket Widget</strong><br>
-        Tiny floating widget with album art, track name, progress bar, and playback controls. Always on top, draggable.
+        An even more compact floating widget with album art, track name, artist, a thin progress bar, and prev/play/next buttons. Always on top, draggable, with its own position presets. Designed for when you just want a tiny glanceable indicator of what's playing.
       </div>
-      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+      <div style="background:rgba(0,0,0,0.04);padding:14px;border-radius:8px">
         <strong style="color:#2a2218">System Tray</strong><br>
-        Quick controls from the tray icon. Play/pause, next/prev, toggle widgets, and quit — all without opening the main window.
+        Right-click the tray icon for quick controls without opening any window: play/pause, next, previous, toggle minibar, toggle locket, show main window, or quit. The tray icon persists even when all windows are closed.
       </div>
     </div>
 
-    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">11 Themes</h3>
+    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Synced Lyrics</h3>
     <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:10px">
-      Each theme is more than a color swap — they feature unique layouts, animations, and visual elements that transform the entire experience.
+      Harmoni fetches synced lyrics from LRCLIB, searching by track title and artist. It prefers synced (timestamped) results over plain lyrics. The lyrics panel highlights the current line, dims past lines, and auto-scrolls to keep the active line centered. Lyrics work in both the main player and the minibar overlay, and respect all 14 theme styles, including dark-on-light themes like Retro and XP where text colors are inverted.
+    </p>
+
+    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Discord Rich Presence</h3>
+    <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:10px">
+      When enabled (on by default), Harmoni connects to the Discord desktop client via IPC and updates your profile with the current track title, artist, album, and a progress bar showing elapsed/remaining time. The connection status is visible in Settings and shows "Connected", "On (not connected)", or "Off". Requires the Discord desktop app (not the browser version).
+    </p>
+
+    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Auto-Update & Patch Notes</h3>
+    <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:10px">
+      Harmoni uses electron-updater to check for new releases from GitHub on every launch. Updates download in the background and install automatically when you restart the app. After an update, a "What's New" popup shows the changelog for the new version. You can also access the full version history anytime from the hamburger menu.
+    </p>
+
+    <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">14 Themes</h3>
+    <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:10px">
+      Each theme is more than a color swap. They feature unique layouts, animations, and visual elements that transform the entire experience.
     </p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;color:#4a4030;line-height:1.5">
-      <div><strong>Default</strong> — Dark glassmorphism with blurred album art background</div>
-      <div><strong>Light</strong> — Clean white, Apple Music inspired, pill-shaped play button</div>
-      <div><strong>Windows XP</strong> — Authentic Luna Blue with 3D inset panels and gradient buttons</div>
-      <div><strong>Vinyl</strong> — Warm turntable feel with spinning circular art and vinyl grooves</div>
-      <div><strong>Neon</strong> — Cyberpunk synthwave with scanlines, glowing borders, and pulsing buttons</div>
-      <div><strong>Radio</strong> — Vintage AM/FM receiver with amber LCD text and monospace fonts</div>
-      <div><strong>Retro</strong> — Cream paper with fieldset-style labeled sections and sharp corners</div>
-      <div><strong>Terminal</strong> — Dark hacker terminal with green accent, CRT scanlines, and monospace</div>
-      <div><strong>Bloom</strong> — Soft purple Fluent Design with blurred backgrounds and extra rounding</div>
-      <div><strong>Starry Night</strong> — Deep space with twinkling stars, shooting stars, and cosmic glow</div>
-      <div><strong>Ziro</strong> — Clean geometric with bold blue accent stripes and modern flat design</div>
+      <div><strong>Default</strong>: dark glassmorphism with blurred album art background</div>
+      <div><strong>Light</strong>: clean white, Apple Music inspired, pill-shaped play button</div>
+      <div><strong>Windows XP</strong>: authentic Luna Blue with 3D inset panels and gradient buttons</div>
+      <div><strong>Vinyl</strong>: warm turntable feel with spinning circular art and vinyl grooves</div>
+      <div><strong>Neon</strong>: cyberpunk synthwave with scanlines, glowing borders, and pulsing buttons</div>
+      <div><strong>Radio</strong>: vintage AM/FM receiver with amber LCD text and monospace fonts</div>
+      <div><strong>Retro</strong>: cream paper with fieldset-style labeled sections and sharp corners</div>
+      <div><strong>Terminal</strong>: dark hacker terminal with green accent, CRT scanlines, and monospace</div>
+      <div><strong>Bloom</strong>: soft purple Fluent Design with blurred backgrounds and extra rounding</div>
+      <div><strong>Starry Night</strong>: deep space with twinkling stars, shooting stars, and cosmic glow</div>
+      <div><strong>Ziro</strong>: clean geometric with bold blue accent stripes and modern flat design</div>
+      <div><strong>Glass</strong>: frosted transparent panels with subtle borders and backdrop blur</div>
+      <div><strong>Album</strong>: full-screen album art background, hidden art element, large title at bottom</div>
+      <div><strong>Fade</strong>: blurred album art with warm saturation overlay on minibar and locket</div>
     </div>
 
     <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Features</h3>
@@ -610,6 +818,8 @@
       <div>&#x1F3AE; Game-compatible overlays (borderless windowed)</div>
       <div>&#x1F504; Auto-update via GitHub Releases</div>
       <div>&#x1F4AC; In-app feedback form (bug reports & suggestions)</div>
+      <div>&#x1F3AE; Discord Rich Presence: shows what you're listening to</div>
+      <div>&#x1F4CB; In-app patch notes: auto-popup after updates with version history</div>
       <div>&#x1F512; Single instance lock</div>
       <div>&#x1F4BE; Persists theme, window positions, and last device</div>
     </div>
@@ -630,7 +840,7 @@
       </div>
       <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px;text-align:center">
         <strong style="color:#2a2218">macOS</strong><br>
-        Universal .app (Intel + M-chip)<br>Auto-update<br>AppleScript detection
+        DMG installer (Apple Silicon)<br>Auto-update<br>AppleScript detection
       </div>
       <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px;text-align:center">
         <strong style="color:#2a2218">Linux</strong><br>
@@ -639,14 +849,45 @@
     </div>
 
     <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Tech Stack</h3>
-    <p style="font-size:13px;line-height:1.7;color:#4a4030;margin-bottom:30px">
-      Built with <strong>Electron</strong> for cross-platform desktop support, <strong>Node.js</strong> backend services, <strong>sonos</strong> npm library for UPnP device control, <strong>music-metadata</strong> for local file parsing, <strong>electron-updater</strong> for auto-updates, and <strong>LRCLIB</strong> for synced lyrics. The UI is vanilla HTML/CSS/JS with 1800+ lines of theme CSS across 11 distinct visual identities.
-    </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:#4a4030;line-height:1.6;margin-bottom:30px">
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">Electron</strong><br>
+        Cross-platform desktop shell. Frameless windows for the main player, always-on-top transparent windows for minibar and locket, system tray integration, and single instance lock.
+      </div>
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">node-sonos</strong><br>
+        UPnP/SOAP communication with Sonos speakers. Handles device discovery, playback control, queue management, volume, favorites, playlists, and speaker grouping.
+      </div>
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">music-metadata</strong><br>
+        Parses MP3, FLAC, M4A, OGG, and WAV file tags to extract title, artist, album, duration, and embedded album art. Used for the local files player.
+      </div>
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">discord-rpc</strong><br>
+        IPC connection to the Discord desktop client for Rich Presence. Updates profile activity with track info, timestamps, and the Harmoni logo.
+      </div>
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">electron-updater</strong><br>
+        Auto-update via GitHub Releases. Downloads updates in the background, installs on next restart. Build pipeline uses electron-builder with NSIS (Windows), DMG (macOS), and AppImage (Linux).
+      </div>
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">LRCLIB API</strong><br>
+        External API for fetched synced (timestamped) lyrics by track title and artist. Prefers synced results; falls back to plain lyrics if unavailable.
+      </div>
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">Vanilla HTML/CSS/JS</strong><br>
+        No frameworks. 2000+ lines of theme CSS across 14 themes, each with unique layouts, animations, and visual elements for the main player, minibar, and locket.
+      </div>
+      <div style="background:rgba(0,0,0,0.04);padding:12px;border-radius:8px">
+        <strong style="color:#2a2218">Platform APIs</strong><br>
+        Windows GSMTC via PowerShell for media detection, macOS AppleScript for Spotify/Apple Music queries, Linux playerctl/MPRIS2. iTunes Search API for album art fallback.
+      </div>
+    </div>
 
     <h3 style="font-size:16px;font-weight:600;margin:24px 0 10px;color:#2a2218">Credits</h3>
     <div style="font-size:12px;color:#4a4030;line-height:1.7;margin-bottom:30px">
-      <p><strong>uy/nikki</strong> — design, development</p>
-      <p><strong>gian/donnygi</strong> — macOS environment tester</p>
+      <p><strong>uy/nikki</strong>: design, development</p>
+      <p><strong>gian/donnygi</strong>: macOS environment tester</p>
     </div>
   </div>
 
@@ -663,6 +904,9 @@
     <button class="theme-chip" data-theme="bloom">Bloom</button>
     <button class="theme-chip" data-theme="starry">Starry</button>
     <button class="theme-chip" data-theme="ziro">Ziro</button>
+    <button class="theme-chip" data-theme="glass">Glass</button>
+    <button class="theme-chip" data-theme="album">Album</button>
+    <button class="theme-chip" data-theme="fade">Fade</button>
   </div>
 
   <script>
@@ -698,6 +942,30 @@
       const curSec = Math.floor(totalSec * progress / 100);
       document.getElementById('time-cur').textContent = Math.floor(curSec/60) + ':' + String(curSec%60).padStart(2,'0');
     }, 100);
+
+    // Fetch latest release and populate download buttons
+    fetch('https://api.github.com/repos/uyattoananh/Harmoni/releases/latest')
+      .then(r => r.json())
+      .then(release => {
+        const assets = release.assets || [];
+        const fmt = (bytes) => bytes > 0 ? `(${Math.round(bytes / 1024 / 1024)} MB)` : '';
+        const win = assets.find(a => a.name.endsWith('.exe') && !a.name.includes('blockmap'));
+        const mac = assets.find(a => a.name.endsWith('.dmg') && !a.name.includes('blockmap'));
+        const linux = assets.find(a => a.name.endsWith('.AppImage'));
+        if (win) {
+          document.getElementById('dl-win').href = win.browser_download_url;
+          document.getElementById('dl-win-size').textContent = fmt(win.size);
+        }
+        if (mac) {
+          document.getElementById('dl-mac').href = mac.browser_download_url;
+          document.getElementById('dl-mac-size').textContent = fmt(mac.size);
+        }
+        if (linux) {
+          document.getElementById('dl-linux').href = linux.browser_download_url;
+          document.getElementById('dl-linux-size').textContent = fmt(linux.size);
+        }
+      })
+      .catch(() => {});
   </script>
 </body>
 </html>
